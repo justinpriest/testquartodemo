@@ -23,7 +23,7 @@ library(janitor)
 library(here)
 #rsconnect::writeManifest() #run once/every time you update libraries
 
-situkweir <- read_csv(here::here("data/situkweirdata.csv")) %>% 
+situkweir <- read_csv(here::here("situkweirdata.csv")) %>% 
   clean_names() %>%
   mutate(obs_date = mdy(obs_date),
          obs_day_mm_dd = as.Date(obs_day_mm_dd, format = "%d-%b"))
