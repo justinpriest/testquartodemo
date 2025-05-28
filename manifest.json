@@ -3099,10 +3099,22 @@
   },
   "files": {
     "quartodoc.html": {
-      "checksum": "24755688db4560398c0ae07921dae6f2"
+      "checksum": "9c442c56c1cb28ec779f289c23db17ef"
     },
     "quartodoc.qmd": {
-      "checksum": "ee97bd3f5968bb45cad5933134f8c0ac"
+      "checksum": "3163baf8a7bb211859b19d913454f6f9"
+    },
+    "quartodoc_files/figure-html/cumulativeyear-1.png": {
+      "checksum": "d70817d3ea4fd79e51676167cab56a8c"
+    },
+    "quartodoc_files/figure-html/fig-cumulativeggplot-1.png": {
+      "checksum": "73afe5780748781a5928d182b0f75852"
+    },
+    "quartodoc_files/figure-html/fig-totyear-1.png": {
+      "checksum": "de7c30cec0f36f60abdebee35d496071"
+    },
+    "quartodoc_files/figure-html/totalyearchart-1.png": {
+      "checksum": "66aecacdc19cb0be24048487ddcf3d3e"
     },
     "quartodoc_files/figure-html/unnamed-chunk-1-1.png": {
       "checksum": "66aecacdc19cb0be24048487ddcf3d3e"
@@ -3139,6 +3151,18 @@
     },
     "quartodoc_files/libs/quarto-html/tippy.umd.min.js": {
       "checksum": "d828775275749701b48bd9d958814111"
+    },
+    "quartodoc_files/libs/quarto-ojs/quarto-ojs-runtime.js": {
+      "checksum": "18a7c9f39c1a1b82b4f0b1c72d5f6c0d"
+    },
+    "quartodoc_files/libs/quarto-ojs/quarto-ojs.css": {
+      "checksum": "8645f556f692a33c4645eeb25d3d4122"
+    },
+    "README.md": {
+      "checksum": "ff38e83d6bad1b4c51c7ff5af5f943cd"
+    },
+    "situkweirdata.csv": {
+      "checksum": "de246a21a9a9ea8294a3c756f88d14ae"
     }
   },
   "users": null

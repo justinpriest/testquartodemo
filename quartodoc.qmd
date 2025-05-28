@@ -29,6 +29,7 @@ Perhaps the best use case is the automatic generation of figures. This file is c
 library(tidyverse)
 library(lubridate)
 library(janitor)
+library(knitr)
 #library(here)
 #rsconnect::writeManifest() #run once/every time you update libraries
 
@@ -49,7 +50,11 @@ situksummary <- situkweir %>%
 #| fig-cap: "Totals by year figure made with ggplot."
 
 ggplot(situksummary, aes(x = year, y = totalcount)) +
-  geom_col()
+  geom_col(fill = "#72a9cf", color = "black") +
+  scale_y_continuous(labels=function(x) format(x, big.mark = ",",  scientific = FALSE),
+                     breaks = seq(0, 225000, 25000)) +
+  labs(x = "Year", y = "Count of sockeye salmon") +
+  theme_bw()
 
 counts2020 <- (situksummary %>% filter(year == 2020))$totalcount
 
@@ -82,7 +87,11 @@ jsonlite::toJSON(situkcummcounts, dataframe = "rows", pretty = TRUE, auto_unbox 
 
 situkcummcounts %>%
   ggplot(aes(x = obs_day_mm_dd, y = cumulative_count, color = year)) +
-  geom_line()
+  geom_line(linewidth = 2) +
+  scale_y_continuous(labels=function(x) format(x, big.mark = ",",  scientific = FALSE),
+                     breaks = seq(0, 125000, 25000)) +
+  labs(x = "Date", y = "Cumulative count of sockeye salmon") +
+  theme_bw()
 ```
 
 We can quickly add more text too.
@@ -155,4 +164,26 @@ Plot.plot({
   ]
 })
 
+```
+
+
+## Of Night and Light and the Half Light
+```{r summarytable}
+summarytable <- situkcummcounts %>%
+  group_by(year) %>%
+  arrange(obs_day_mm_dd) %>%
+  mutate(
+    total = max(cumulative_count, na.rm = TRUE),
+    median_target = total / 2,
+    abs_diff = abs(cumulative_count - median_target)) %>%
+  summarise(
+    weir_start_date = min(obs_date[cumulative_count > 0], na.rm = TRUE),
+    weir_end_date = max(obs_date[!is.na(cumulative_count)], na.rm = TRUE),
+    season_total = max(cumulative_count, na.rm = TRUE),
+    median_date = obs_date[which.min(abs_diff)],
+    peak_day = obs_date[which.max(count)],
+    peak_count = max(count, na.rm = TRUE))
+
+summarytable %>% 
+  kable(digits = 0, format = "html", caption = "Run Timing Summary by Year")
 ```
