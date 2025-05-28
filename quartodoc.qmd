@@ -38,7 +38,7 @@ situksummary <- situkweir %>%
 
 You can add options to executable code like this
 
-```{r}
+```{r totalyearchart}
 #| echo: false
 
 ggplot(situksummary, aes(x = year, y = totalcount)) +
@@ -47,3 +47,84 @@ ggplot(situksummary, aes(x = year, y = totalcount)) +
 ```
 
 The `echo: false` option disables the printing of code (only output is displayed).
+```{r cumulativeyear}
+situkcummcounts <- situkweir %>%
+  filter(year >= 2015) %>%
+  arrange(year, obs_day_mm_dd) %>%  # Ensure data is sorted by year and day
+  group_by(year) %>%
+  mutate(cumulative_count = cumsum(count),
+         year = as.factor(year)) %>%
+  ungroup() 
+
+jsonlite::toJSON(situkcummcounts, dataframe = "rows", pretty = TRUE, auto_unbox = TRUE) |>
+  htmltools::tags$script(type = "application/json", id = "json_data")
+
+situkcummcounts %>%
+  ggplot(aes(x = obs_day_mm_dd, y = cumulative_count, color = year)) +
+  geom_line()
+```
+
+
+```{ojs ojsyears}
+//| echo: false
+
+import { Plot } from "@observablehq/plot"
+
+
+// Parse data from embedded R JSON
+raw = JSON.parse(document.getElementById("json_data").textContent)
+
+data = raw.map(d => ({
+  date: new Date(d.obs_day_mm_dd),
+  year: d.year,
+  count: +d.cumulative_count
+}))
+
+
+// All unique years in sorted order
+years = [...new Set(data.map(d => d.year))].sort()
+
+// Assign a fixed color palette (adjust if more than 10 years)
+colors = d3.schemeTableau10.slice(0, years.length)
+
+
+
+// Interactive checkbox to choose babies
+viewof selectedyears = Inputs.checkbox(
+  [...new Set(data.map(d => d.year))],
+  { label: "Select Years", value: [...new Set(data.map(d => d.year))] }
+)
+
+// Filter the dataset to selected years
+filtered = data.filter(d => selectedyears.includes(d.year))
+
+
+
+// ✅ Plot with lines + hover dots
+Plot.plot({
+  x: { label: "Date" },
+  y: { label: "Cumulative Count" },
+  color: {
+    domain: years,
+    range: colors,
+    legend: true
+  },
+  marks: [
+    Plot.line(filtered, {
+      x: "date",
+      y: "count",
+      stroke: "year",
+      strokeWidth: 2
+    }),
+    Plot.dot(filtered, {
+      x: "date",
+      y: "count",
+      fill: "year",
+      title: d => `${d.year}: ${d.count}`,
+      tip: true  // ✅ tooltip only on hover
+    })
+  ]
+})
+
+```
+
