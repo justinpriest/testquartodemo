@@ -22,6 +22,9 @@ This is an example Quarto file. This entire document was written in code to demo
 The background data for this document is from the Situk River weir near Yakutat 
 and collections of coho salmon genetic samples collected in 2023. 
 
+1) What kind of reports are created with Quarto? 
+To date, most Quarto reports are HTML files created with inseason data. There could be a desire / capability to create more “complete” reports with Quarto, if there were a straightforward publications route.
+
 # Figures
 
 ## Generation of Figures
