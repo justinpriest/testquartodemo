@@ -71,6 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="quartodoc_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script type="module" src="quartodoc_files/libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="quartodoc_files/libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+<script src="quartodoc_files/libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="quartodoc_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 
 
 </head>
@@ -92,8 +96,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#generation-of-figures" id="toc-generation-of-figures" class="nav-link" data-scroll-target="#generation-of-figures">Generation of Figures</a></li>
   <li><a href="#copy-speech-original-response" id="toc-copy-speech-original-response" class="nav-link" data-scroll-target="#copy-speech-original-response">Copy Speech… Original Response</a>
   <ul class="collapse">
-  <li><a href="#a-traveller-from-an-antique-land" id="toc-a-traveller-from-an-antique-land" class="nav-link" data-scroll-target="#a-traveller-from-an-antique-land">A traveller from an antique land…</a></li>
+  <li><a href="#a-traveller-from-an-antique-land" id="toc-a-traveller-from-an-antique-land" class="nav-link" data-scroll-target="#a-traveller-from-an-antique-land">A traveller from an antique land</a></li>
   </ul></li>
+  </ul></li>
+  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables">Tables</a>
+  <ul class="collapse">
   <li><a href="#of-night-and-light-and-the-half-light" id="toc-of-night-and-light-and-the-half-light" class="nav-link" data-scroll-target="#of-night-and-light-and-the-half-light">Of Night and Light and the Half Light</a></li>
   </ul></li>
   </ul>
@@ -165,7 +172,7 @@ Figure&nbsp;1: Totals by year figure made with ggplot.
 <h2 class="anchored" data-anchor-id="copy-speech-original-response">Copy Speech… Original Response</h2>
 <p>We can add summary text here and even dynamically summarize the data with small snippets of summary text written by code. For example, in 2020, at the Situk River weir, there were 63,343 sockeye salmon.</p>
 <section id="a-traveller-from-an-antique-land" class="level3">
-<h3 class="anchored" data-anchor-id="a-traveller-from-an-antique-land">A traveller from an antique land…</h3>
+<h3 class="anchored" data-anchor-id="a-traveller-from-an-antique-land">A traveller from an antique land</h3>
 <p>As you can see, the headings are also easily created, allowing for simple navigation.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -8518,63 +8525,63 @@ Figure&nbsp;2: A static figure made with ggplot.
 <p>We can quickly add more text too.</p>
 <p>Also, since this is a hosted HTML file, we can make things <em>I N T E R A C T I V E.</em> The plot below is similar to the above but it now has some checkboxes to filter the data and also can show numbers when hovered over. Notably, this was written in a completely different language than R!</p>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="109" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 108;"><span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { Plot } <span class="im">from</span> <span class="st">"@observablehq/plot"</span></span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a></span>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="110" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 109;"><span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { Plot } <span class="im">from</span> <span class="st">"@observablehq/plot"</span></span>
 <span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a><span class="co">// Parse data from embedded R JSON</span></span>
-<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>raw <span class="op">=</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">parse</span>(<span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"json_data"</span>)<span class="op">.</span><span class="at">textContent</span>)</span>
-<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> raw<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> ({</span>
-<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>  <span class="dt">date</span><span class="op">:</span> <span class="kw">new</span> <span class="bu">Date</span>(d<span class="op">.</span><span class="at">obs_day_mm_dd</span>)<span class="op">,</span></span>
-<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span><span class="op">:</span> d<span class="op">.</span><span class="at">year</span><span class="op">,</span></span>
-<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>  <span class="dt">count</span><span class="op">:</span> <span class="op">+</span>d<span class="op">.</span><span class="at">cumulative_count</span></span>
-<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>}))</span>
-<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a><span class="co">// Parse data from embedded R JSON</span></span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>raw <span class="op">=</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">parse</span>(<span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"json_data"</span>)<span class="op">.</span><span class="at">textContent</span>)</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> raw<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> ({</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>  <span class="dt">date</span><span class="op">:</span> <span class="kw">new</span> <span class="bu">Date</span>(d<span class="op">.</span><span class="at">obs_day_mm_dd</span>)<span class="op">,</span></span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span><span class="op">:</span> d<span class="op">.</span><span class="at">year</span><span class="op">,</span></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>  <span class="dt">count</span><span class="op">:</span> <span class="op">+</span>d<span class="op">.</span><span class="at">cumulative_count</span></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>}))</span>
 <span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="co">// All unique years in sorted order</span></span>
-<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>years <span class="op">=</span> [<span class="op">...</span><span class="kw">new</span> <span class="bu">Set</span>(data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">year</span>))]<span class="op">.</span><span class="fu">sort</span>()</span>
-<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a><span class="co">// Assign a fixed color palette (adjust if more than 10 years)</span></span>
-<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> d3<span class="op">.</span><span class="at">schemeTableau10</span><span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span> years<span class="op">.</span><span class="at">length</span>)</span>
-<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a><span class="co">// All unique years in sorted order</span></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>years <span class="op">=</span> [<span class="op">...</span><span class="kw">new</span> <span class="bu">Set</span>(data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">year</span>))]<span class="op">.</span><span class="fu">sort</span>()</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a><span class="co">// Assign a fixed color palette (adjust if more than 10 years)</span></span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> d3<span class="op">.</span><span class="at">schemeTableau10</span><span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span> years<span class="op">.</span><span class="at">length</span>)</span>
 <span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a><span class="co">// Interactive checkbox to choose babies</span></span>
-<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>viewof selectedyears <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">checkbox</span>(</span>
-<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>  [<span class="op">...</span><span class="kw">new</span> <span class="bu">Set</span>(data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">year</span>))]<span class="op">,</span></span>
-<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>  { <span class="dt">label</span><span class="op">:</span> <span class="st">"Select Years"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> [<span class="op">...</span><span class="kw">new</span> <span class="bu">Set</span>(data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">year</span>))] }</span>
-<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a><span class="co">// Filter the dataset to selected years</span></span>
-<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>filtered <span class="op">=</span> data<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> selectedyears<span class="op">.</span><span class="fu">includes</span>(d<span class="op">.</span><span class="at">year</span>))</span>
-<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a><span class="co">// Interactive checkbox to choose babies</span></span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>viewof selectedyears <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">checkbox</span>(</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>  [<span class="op">...</span><span class="kw">new</span> <span class="bu">Set</span>(data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">year</span>))]<span class="op">,</span></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>  { <span class="dt">label</span><span class="op">:</span> <span class="st">"Select Years"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> [<span class="op">...</span><span class="kw">new</span> <span class="bu">Set</span>(data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">year</span>))] }</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a><span class="co">// Filter the dataset to selected years</span></span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>filtered <span class="op">=</span> data<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> selectedyears<span class="op">.</span><span class="fu">includes</span>(d<span class="op">.</span><span class="at">year</span>))</span>
 <span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a><span class="co">// plot with lines + hover dots</span></span>
-<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"Date"</span> }<span class="op">,</span></span>
-<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"Cumulative Count"</span> }<span class="op">,</span></span>
-<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> {</span>
-<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>    <span class="dt">domain</span><span class="op">:</span> years<span class="op">,</span></span>
-<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>    <span class="dt">range</span><span class="op">:</span> colors<span class="op">,</span></span>
-<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>    <span class="dt">legend</span><span class="op">:</span> <span class="kw">true</span></span>
-<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(filtered<span class="op">,</span> {</span>
-<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"date"</span><span class="op">,</span></span>
-<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"count"</span><span class="op">,</span></span>
-<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"year"</span><span class="op">,</span></span>
-<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span></span>
-<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(filtered<span class="op">,</span> {</span>
-<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"date"</span><span class="op">,</span></span>
-<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"count"</span><span class="op">,</span></span>
-<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"year"</span><span class="op">,</span></span>
-<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>      <span class="dt">title</span><span class="op">:</span> d <span class="kw">=&gt;</span> <span class="vs">`</span><span class="sc">${</span>d<span class="op">.</span><span class="at">year</span><span class="sc">}</span><span class="vs">: </span><span class="sc">${</span>d<span class="op">.</span><span class="at">count</span><span class="sc">}</span><span class="vs">`</span><span class="op">,</span></span>
-<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>      <span class="dt">tip</span><span class="op">:</span> <span class="kw">true</span>  <span class="co">// tooltip only on hover</span></span>
-<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>    })</span>
-<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>  ]</span>
-<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a><span class="co">// plot with lines + hover dots</span></span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"Date"</span> }<span class="op">,</span></span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"Cumulative Count"</span> }<span class="op">,</span></span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> {</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>    <span class="dt">domain</span><span class="op">:</span> years<span class="op">,</span></span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>    <span class="dt">range</span><span class="op">:</span> colors<span class="op">,</span></span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>    <span class="dt">legend</span><span class="op">:</span> <span class="kw">true</span></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(filtered<span class="op">,</span> {</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"date"</span><span class="op">,</span></span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"count"</span><span class="op">,</span></span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"year"</span><span class="op">,</span></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span></span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(filtered<span class="op">,</span> {</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"date"</span><span class="op">,</span></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"count"</span><span class="op">,</span></span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"year"</span><span class="op">,</span></span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>      <span class="dt">title</span><span class="op">:</span> d <span class="kw">=&gt;</span> <span class="vs">`</span><span class="sc">${</span>d<span class="op">.</span><span class="at">year</span><span class="sc">}</span><span class="vs">: </span><span class="sc">${</span>d<span class="op">.</span><span class="at">count</span><span class="sc">}</span><span class="vs">`</span><span class="op">,</span></span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>      <span class="dt">tip</span><span class="op">:</span> <span class="kw">true</span>  <span class="co">// tooltip only on hover</span></span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="fig-dynam" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-dynam-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -8699,11 +8706,15 @@ Figure&nbsp;3: A dynamic figure made with OJS
 </div>
 </section>
 </section>
+</section>
+<section id="tables" class="level1">
+<h1>Tables</h1>
 <section id="of-night-and-light-and-the-half-light" class="level2">
 <h2 class="anchored" data-anchor-id="of-night-and-light-and-the-half-light">Of Night and Light and the Half Light</h2>
+<p>I know what you’re thinking, “yadda yadda yadda, figures, pshhh, who needs em. Show me some tables!” One of the great parts about tables in HTML is the ability to add formatting, search the table yourself, or just highlight rows.</p>
 <div class="cell">
 <div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table table-striped table-hover caption-top table-sm small" data-quarto-postprocess="true">
 <caption>Run Timing Summary by Year</caption>
 <thead>
 <tr class="header">
@@ -8721,91 +8732,91 @@ Figure&nbsp;3: A dynamic figure made with OJS
 <td style="text-align: left;">2015</td>
 <td style="text-align: left;">2015-05-31</td>
 <td style="text-align: left;">2015-08-07</td>
-<td style="text-align: right;">95093</td>
+<td style="text-align: right; color: white !important; background-color: rgba(36, 170, 131, 255) !important;">95,093</td>
 <td style="text-align: left;">2015-07-13</td>
 <td style="text-align: left;">2015-07-12</td>
-<td style="text-align: right;">5650</td>
+<td style="text-align: right;">5,650</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2016</td>
 <td style="text-align: left;">2016-05-31</td>
 <td style="text-align: left;">2016-08-11</td>
-<td style="text-align: right;">56738</td>
+<td style="text-align: right; color: white !important; background-color: rgba(57, 87, 140, 255) !important;">56,738</td>
 <td style="text-align: left;">2016-07-09</td>
 <td style="text-align: left;">2016-07-17</td>
-<td style="text-align: right;">3977</td>
+<td style="text-align: right;">3,977</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2017</td>
 <td style="text-align: left;">2017-05-31</td>
 <td style="text-align: left;">2017-08-10</td>
-<td style="text-align: right;">91092</td>
+<td style="text-align: right; color: white !important; background-color: rgba(31, 161, 135, 255) !important;">91,092</td>
 <td style="text-align: left;">2017-07-07</td>
 <td style="text-align: left;">2017-06-18</td>
-<td style="text-align: right;">4688</td>
+<td style="text-align: right;">4,688</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2018</td>
 <td style="text-align: left;">2018-05-30</td>
 <td style="text-align: left;">2018-08-07</td>
-<td style="text-align: right;">26704</td>
+<td style="text-align: right; color: white !important; background-color: rgba(68, 1, 84, 255) !important;">26,704</td>
 <td style="text-align: left;">2018-07-15</td>
 <td style="text-align: left;">2018-07-10</td>
-<td style="text-align: right;">4225</td>
+<td style="text-align: right;">4,225</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2019</td>
 <td style="text-align: left;">2019-06-01</td>
 <td style="text-align: left;">2019-08-10</td>
-<td style="text-align: right;">72530</td>
+<td style="text-align: right; color: white !important; background-color: rgba(41, 122, 142, 255) !important;">72,530</td>
 <td style="text-align: left;">2019-07-17</td>
 <td style="text-align: left;">2019-07-22</td>
-<td style="text-align: right;">4979</td>
+<td style="text-align: right;">4,979</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2020</td>
 <td style="text-align: left;">2020-06-02</td>
 <td style="text-align: left;">2020-08-07</td>
-<td style="text-align: right;">63343</td>
+<td style="text-align: right; color: white !important; background-color: rgba(49, 102, 142, 255) !important;">63,343</td>
 <td style="text-align: left;">2020-07-11</td>
 <td style="text-align: left;">2020-07-08</td>
-<td style="text-align: right;">3713</td>
+<td style="text-align: right;">3,713</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2021</td>
 <td style="text-align: left;">2021-05-28</td>
 <td style="text-align: left;">2021-08-09</td>
-<td style="text-align: right;">119072</td>
+<td style="text-align: right; color: white !important; background-color: rgba(136, 213, 72, 255) !important;">119,072</td>
 <td style="text-align: left;">2021-07-14</td>
 <td style="text-align: left;">2021-07-09</td>
-<td style="text-align: right;">7707</td>
+<td style="text-align: right;">7,707</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2022</td>
 <td style="text-align: left;">2022-06-14</td>
 <td style="text-align: left;">2022-08-05</td>
-<td style="text-align: right;">90369</td>
+<td style="text-align: right; color: white !important; background-color: rgba(31, 160, 136, 255) !important;">90,369</td>
 <td style="text-align: left;">2022-07-07</td>
 <td style="text-align: left;">2022-07-17</td>
-<td style="text-align: right;">7991</td>
+<td style="text-align: right;">7,991</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2023</td>
 <td style="text-align: left;">2023-06-03</td>
 <td style="text-align: left;">2023-08-02</td>
-<td style="text-align: right;">127873</td>
+<td style="text-align: right; color: white !important; background-color: rgba(187, 223, 39, 255) !important;">127,873</td>
 <td style="text-align: left;">2023-07-13</td>
 <td style="text-align: left;">2023-07-12</td>
-<td style="text-align: right;">7387</td>
+<td style="text-align: right;">7,387</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2024</td>
 <td style="text-align: left;">2024-05-29</td>
 <td style="text-align: left;">2024-08-11</td>
-<td style="text-align: right;">75776</td>
+<td style="text-align: right; color: white !important; background-color: rgba(38, 130, 142, 255) !important;">75,776</td>
 <td style="text-align: left;">2024-07-12</td>
 <td style="text-align: left;">2024-07-20</td>
-<td style="text-align: right;">6318</td>
+<td style="text-align: right;">6,318</td>
 </tr>
 </tbody>
 </table>

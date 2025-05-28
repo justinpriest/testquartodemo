@@ -30,6 +30,7 @@ library(tidyverse)
 library(lubridate)
 library(janitor)
 library(knitr)
+library(kableExtra)
 #library(here)
 #rsconnect::writeManifest() #run once/every time you update libraries
 
@@ -64,7 +65,7 @@ counts2020 <- (situksummary %>% filter(year == 2020))$totalcount
 
 We can add summary text here and even dynamically summarize the data with small snippets of summary text written by code. For example, in 2020, at the Situk River weir, there were `{r} prettyNum(counts2020, big.mark = ",")` sockeye salmon.
 
-### A traveller from an antique land...
+### A traveller from an antique land
 
 As you can see, the headings are also easily created, allowing for simple navigation.
 
@@ -166,8 +167,11 @@ Plot.plot({
 
 ```
 
-
-## Of Night and Light and the Half Light
+# Tables
+## Of Night and Light and the Half Light  
+I know what you're thinking, "yadda yadda yadda, figures, pshhh, who needs em. 
+Show me some tables!" One of the great parts about tables in HTML is the ability 
+to add formatting, search the table yourself, or just highlight rows. 
 ```{r summarytable}
 summarytable <- situkcummcounts %>%
   group_by(year) %>%
@@ -185,5 +189,9 @@ summarytable <- situkcummcounts %>%
     peak_count = max(count, na.rm = TRUE))
 
 summarytable %>% 
-  kable(digits = 0, format = "html", caption = "Run Timing Summary by Year")
+  kable(digits = 0, format.args = list(big.mark = ","), 
+        format = "html", caption = "Run Timing Summary by Year") %>%
+  kable_styling(bootstrap_options = c("striped", "hover")) %>%
+  column_spec(4, color = "white",
+              background = spec_color(summarytable$season_total, end = 0.9))
 ```
