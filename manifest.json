@@ -158,6 +158,34 @@
         "Built": "R 4.4.0; ; 2024-04-23 00:23:59 UTC; windows"
       }
     },
+    "Rcpp": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "Rcpp",
+        "Title": "Seamless R and C++ Integration",
+        "Version": "1.0.14",
+        "Date": "2025-01-11",
+        "Authors@R": "c(person(\"Dirk\", \"Eddelbuettel\", role = c(\"aut\", \"cre\"), email = \"edd@debian.org\",\n                    comment = c(ORCID = \"0000-0001-6419-907X\")),\n             person(\"Romain\", \"Francois\", role = \"aut\",\n                    comment = c(ORCID = \"0000-0002-2444-4226\")),\n             person(\"JJ\", \"Allaire\", role = \"aut\",\n                    comment = c(ORCID = \"0000-0003-0174-9868\")),\n             person(\"Kevin\", \"Ushey\", role = \"aut\",\n                    comment = c(ORCID = \"0000-0003-2880-7407\")),\n             person(\"Qiang\", \"Kou\", role = \"aut\",\n                    comment = c(ORCID = \"0000-0001-6786-5453\")),\n             person(\"Nathan\", \"Russell\", role = \"aut\"),\n             person(\"Iñaki\", \"Ucar\", role = \"aut\",\n                    comment = c(ORCID = \"0000-0001-6403-5550\")),\n             person(\"Doug\", \"Bates\", role = \"aut\",\n                    comment = c(ORCID = \"0000-0001-8316-9503\")),\n             person(\"John\", \"Chambers\", role = \"aut\"))",
+        "Description": "The 'Rcpp' package provides R functions as well as C++ classes which\n offer a seamless integration of R and C++. Many R data types and objects can be\n mapped back and forth to C++ equivalents which facilitates both writing of new\n code as well as easier integration of third-party libraries. Documentation\n about 'Rcpp' is provided by several vignettes included in this package, via the\n 'Rcpp Gallery' site at <https://gallery.rcpp.org>, the paper by Eddelbuettel and\n Francois (2011, <doi:10.18637/jss.v040.i08>), the book by Eddelbuettel (2013,\n <doi:10.1007/978-1-4614-6868-4>) and the paper by Eddelbuettel and Balamuta (2018,\n <doi:10.1080/00031305.2017.1375990>); see 'citation(\"Rcpp\")' for details.",
+        "Imports": "methods, utils",
+        "Suggests": "tinytest, inline, rbenchmark, pkgKitten (>= 0.1.2)",
+        "URL": "https://www.rcpp.org,\nhttps://dirk.eddelbuettel.com/code/rcpp.html,\nhttps://github.com/RcppCore/Rcpp",
+        "License": "GPL (>= 2)",
+        "BugReports": "https://github.com/RcppCore/Rcpp/issues",
+        "MailingList": "rcpp-devel@lists.r-forge.r-project.org",
+        "RoxygenNote": "6.1.1",
+        "Encoding": "UTF-8",
+        "NeedsCompilation": "yes",
+        "Packaged": "2025-01-11 20:21:25 UTC; edd",
+        "Author": "Dirk Eddelbuettel [aut, cre] (<https://orcid.org/0000-0001-6419-907X>),\n  Romain Francois [aut] (<https://orcid.org/0000-0002-2444-4226>),\n  JJ Allaire [aut] (<https://orcid.org/0000-0003-0174-9868>),\n  Kevin Ushey [aut] (<https://orcid.org/0000-0003-2880-7407>),\n  Qiang Kou [aut] (<https://orcid.org/0000-0001-6786-5453>),\n  Nathan Russell [aut],\n  Iñaki Ucar [aut] (<https://orcid.org/0000-0001-6403-5550>),\n  Doug Bates [aut] (<https://orcid.org/0000-0001-8316-9503>),\n  John Chambers [aut]",
+        "Maintainer": "Dirk Eddelbuettel <edd@debian.org>",
+        "Repository": "CRAN",
+        "Date/Publication": "2025-01-12 16:10:02 UTC",
+        "Built": "R 4.4.3; x86_64-w64-mingw32; 2025-04-07 00:32:13 UTC; windows",
+        "Archs": "x64"
+      }
+    },
     "askpass": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -611,6 +639,32 @@
         "Repository": "CRAN",
         "Date/Publication": "2024-06-20 13:00:02 UTC",
         "Built": "R 4.4.3; ; 2025-04-07 00:32:10 UTC; windows"
+      }
+    },
+    "crosstalk": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "crosstalk",
+        "Type": "Package",
+        "Title": "Inter-Widget Interactivity for HTML Widgets",
+        "Version": "1.2.1",
+        "Authors@R": "c(\n    person(\"Joe\", \"Cheng\", role = \"aut\", email = \"joe@posit.co\"),\n    person(\"Carson\", \"Sievert\", role = c(\"aut\", \"cre\"),\n    email = \"carson@posit.co\", comment = c(ORCID = \"0000-0002-4958-2844\")),\n    person(\"Posit Software, PBC\", role = c(\"cph\", \"fnd\")),\n    person(family = \"jQuery Foundation\", role = \"cph\",\n    comment = \"jQuery library and jQuery UI library\"),\n    person(family = \"jQuery contributors\", role = c(\"ctb\", \"cph\"),\n    comment = \"jQuery library; authors listed in inst/www/shared/jquery-AUTHORS.txt\"),\n    person(\"Mark\", \"Otto\", role = \"ctb\",\n    comment = \"Bootstrap library\"),\n    person(\"Jacob\", \"Thornton\", role = \"ctb\",\n    comment = \"Bootstrap library\"),\n    person(family = \"Bootstrap contributors\", role = \"ctb\",\n    comment = \"Bootstrap library\"),\n    person(family = \"Twitter, Inc\", role = \"cph\",\n    comment = \"Bootstrap library\"),\n    person(\"Brian\", \"Reavis\", role = c(\"ctb\", \"cph\"),\n    comment = \"selectize.js library\"),\n    person(\"Kristopher Michael\", \"Kowal\", role = c(\"ctb\", \"cph\"),\n    comment = \"es5-shim library\"),\n    person(family = \"es5-shim contributors\", role = c(\"ctb\", \"cph\"),\n    comment = \"es5-shim library\"),\n    person(\"Denis\", \"Ineshin\", role = c(\"ctb\", \"cph\"),\n    comment = \"ion.rangeSlider library\"),\n    person(\"Sami\", \"Samhuri\", role = c(\"ctb\", \"cph\"),\n    comment = \"Javascript strftime library\")\n    )",
+        "Description": "Provides building blocks for allowing HTML widgets to communicate\n    with each other, with Shiny or without (i.e. static .html files). Currently\n    supports linked brushing and filtering.",
+        "License": "MIT + file LICENSE",
+        "Imports": "htmltools (>= 0.3.6), jsonlite, lazyeval, R6",
+        "Suggests": "shiny, ggplot2, testthat (>= 2.1.0), sass, bslib",
+        "URL": "https://rstudio.github.io/crosstalk/,\nhttps://github.com/rstudio/crosstalk",
+        "BugReports": "https://github.com/rstudio/crosstalk/issues",
+        "RoxygenNote": "7.2.3",
+        "Encoding": "UTF-8",
+        "NeedsCompilation": "no",
+        "Packaged": "2023-11-22 16:29:50 UTC; cpsievert",
+        "Author": "Joe Cheng [aut],\n  Carson Sievert [aut, cre] (<https://orcid.org/0000-0002-4958-2844>),\n  Posit Software, PBC [cph, fnd],\n  jQuery Foundation [cph] (jQuery library and jQuery UI library),\n  jQuery contributors [ctb, cph] (jQuery library; authors listed in\n    inst/www/shared/jquery-AUTHORS.txt),\n  Mark Otto [ctb] (Bootstrap library),\n  Jacob Thornton [ctb] (Bootstrap library),\n  Bootstrap contributors [ctb] (Bootstrap library),\n  Twitter, Inc [cph] (Bootstrap library),\n  Brian Reavis [ctb, cph] (selectize.js library),\n  Kristopher Michael Kowal [ctb, cph] (es5-shim library),\n  es5-shim contributors [ctb, cph] (es5-shim library),\n  Denis Ineshin [ctb, cph] (ion.rangeSlider library),\n  Sami Samhuri [ctb, cph] (Javascript strftime library)",
+        "Maintainer": "Carson Sievert <carson@posit.co>",
+        "Repository": "CRAN",
+        "Date/Publication": "2023-11-23 08:50:07 UTC",
+        "Built": "R 4.4.3; ; 2025-05-24 02:56:49 UTC; windows"
       }
     },
     "curl": {
@@ -1328,6 +1382,34 @@
         "Archs": "x64"
       }
     },
+    "htmlwidgets": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Type": "Package",
+        "Package": "htmlwidgets",
+        "Title": "HTML Widgets for R",
+        "Version": "1.6.4",
+        "Authors@R": "c(\n    person(\"Ramnath\", \"Vaidyanathan\", role = c(\"aut\", \"cph\")),\n    person(\"Yihui\", \"Xie\", role = \"aut\"),\n    person(\"JJ\", \"Allaire\", role = \"aut\"),\n    person(\"Joe\", \"Cheng\", , \"joe@posit.co\", role = \"aut\"),\n    person(\"Carson\", \"Sievert\", , \"carson@posit.co\", role = c(\"aut\", \"cre\"),\n           comment = c(ORCID = \"0000-0002-4958-2844\")),\n    person(\"Kenton\", \"Russell\", role = c(\"aut\", \"cph\")),\n    person(\"Ellis\", \"Hughes\", role = \"ctb\"),\n    person(\"Posit Software, PBC\", role = c(\"cph\", \"fnd\"))\n  )",
+        "Description": "A framework for creating HTML widgets that render in various\n    contexts including the R console, 'R Markdown' documents, and 'Shiny'\n    web applications.",
+        "License": "MIT + file LICENSE",
+        "URL": "https://github.com/ramnathv/htmlwidgets",
+        "BugReports": "https://github.com/ramnathv/htmlwidgets/issues",
+        "Imports": "grDevices, htmltools (>= 0.5.7), jsonlite (>= 0.9.16), knitr\n(>= 1.8), rmarkdown, yaml",
+        "Suggests": "testthat",
+        "Enhances": "shiny (>= 1.1)",
+        "VignetteBuilder": "knitr",
+        "Encoding": "UTF-8",
+        "RoxygenNote": "7.2.3",
+        "NeedsCompilation": "no",
+        "Packaged": "2023-12-06 00:11:16 UTC; cpsievert",
+        "Author": "Ramnath Vaidyanathan [aut, cph],\n  Yihui Xie [aut],\n  JJ Allaire [aut],\n  Joe Cheng [aut],\n  Carson Sievert [aut, cre] (<https://orcid.org/0000-0002-4958-2844>),\n  Kenton Russell [aut, cph],\n  Ellis Hughes [ctb],\n  Posit Software, PBC [cph, fnd]",
+        "Maintainer": "Carson Sievert <carson@posit.co>",
+        "Repository": "CRAN",
+        "Date/Publication": "2023-12-06 06:00:06 UTC",
+        "Built": "R 4.4.3; ; 2025-04-07 02:20:27 UTC; windows"
+      }
+    },
     "httr": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -1600,6 +1682,92 @@
         "Date/Publication": "2024-03-20 06:10:02 UTC",
         "Built": "R 4.4.3; x86_64-w64-mingw32; 2025-02-28 10:27:43 UTC; windows",
         "Archs": "x64"
+      }
+    },
+    "lazyeval": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "lazyeval",
+        "Version": "0.2.2",
+        "Title": "Lazy (Non-Standard) Evaluation",
+        "Description": "An alternative approach to non-standard evaluation using\n    formulas. Provides a full implementation of LISP style 'quasiquotation',\n    making it easier to generate code with other code.",
+        "Authors@R": "c(\n    person(\"Hadley\", \"Wickham\", ,\"hadley@rstudio.com\", c(\"aut\", \"cre\")),\n    person(\"RStudio\", role = \"cph\")\n    )",
+        "License": "GPL-3",
+        "LazyData": "true",
+        "Depends": "R (>= 3.1.0)",
+        "Suggests": "knitr, rmarkdown (>= 0.2.65), testthat, covr",
+        "VignetteBuilder": "knitr",
+        "RoxygenNote": "6.1.1",
+        "NeedsCompilation": "yes",
+        "Packaged": "2019-03-15 14:18:01 UTC; lionel",
+        "Author": "Hadley Wickham [aut, cre],\n  RStudio [cph]",
+        "Maintainer": "Hadley Wickham <hadley@rstudio.com>",
+        "Repository": "CRAN",
+        "Date/Publication": "2019-03-15 17:50:07 UTC",
+        "Built": "R 4.4.3; x86_64-w64-mingw32; 2025-05-24 01:55:12 UTC; windows",
+        "Archs": "x64"
+      }
+    },
+    "leaflet": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Type": "Package",
+        "Package": "leaflet",
+        "Title": "Create Interactive Web Maps with the JavaScript 'Leaflet'\nLibrary",
+        "Version": "2.2.2",
+        "Authors@R": "c(\n    person(\"Joe\", \"Cheng\", , \"joe@posit.co\", role = c(\"aut\", \"cre\")),\n    person(\"Barret\", \"Schloerke\", , \"barret@posit.co\", role = \"aut\",\n           comment = c(ORCID = \"0000-0001-9986-114X\")),\n    person(\"Bhaskar\", \"Karambelkar\", role = \"aut\"),\n    person(\"Yihui\", \"Xie\", role = \"aut\"),\n    person(\"Hadley\", \"Wickham\", role = \"ctb\"),\n    person(\"Kenton\", \"Russell\", role = \"ctb\"),\n    person(\"Kent\", \"Johnson\", role = \"ctb\"),\n    person(\"Vladimir\", \"Agafonkin\", role = c(\"ctb\", \"cph\"),\n           comment = \"Leaflet library\"),\n    person(\"CloudMade\", role = \"cph\",\n           comment = \"Leaflet library\"),\n    person(\"Leaflet contributors\", role = \"ctb\",\n           comment = \"Leaflet library\"),\n    person(\"Brandon Copeland\", role = c(\"ctb\", \"cph\"),\n           comment = \"leaflet-measure plugin\"),\n    person(\"Joerg Dietrich\", role = c(\"ctb\", \"cph\"),\n           comment = \"Leaflet.Terminator plugin\"),\n    person(\"Benjamin Becquet\", role = c(\"ctb\", \"cph\"),\n           comment = \"Leaflet.MagnifyingGlass plugin\"),\n    person(\"Norkart AS\", role = c(\"ctb\", \"cph\"),\n           comment = \"Leaflet.MiniMap plugin\"),\n    person(\"L. Voogdt\", role = c(\"ctb\", \"cph\"),\n           comment = \"Leaflet.awesome-markers plugin\"),\n    person(\"Daniel Montague\", role = c(\"ctb\", \"cph\"),\n           comment = \"Leaflet.EasyButton plugin\"),\n    person(\"Kartena AB\", role = c(\"ctb\", \"cph\"),\n           comment = \"Proj4Leaflet plugin\"),\n    person(\"Robert Kajic\", role = c(\"ctb\", \"cph\"),\n           comment = \"leaflet-locationfilter plugin\"),\n    person(\"Mapbox\", role = c(\"ctb\", \"cph\"),\n           comment = \"leaflet-omnivore plugin\"),\n    person(\"Michael Bostock\", role = c(\"ctb\", \"cph\"),\n           comment = \"topojson\"),\n    person(\"Posit Software, PBC\", role = c(\"cph\", \"fnd\"))\n  )",
+        "Description": "Create and customize interactive maps using the 'Leaflet'\n    JavaScript library and the 'htmlwidgets' package. These maps can be\n    used directly from the R console, from 'RStudio', in Shiny\n    applications and R Markdown documents.",
+        "License": "GPL-3",
+        "URL": "https://rstudio.github.io/leaflet/,\nhttps://github.com/rstudio/leaflet",
+        "BugReports": "https://github.com/rstudio/leaflet/issues",
+        "Depends": "R (>= 3.1.0)",
+        "Imports": "crosstalk, htmltools, htmlwidgets (>= 1.5.4), jquerylib,\nleaflet.providers (>= 2.0.0), magrittr, methods, png, raster\n(>= 3.6.3), RColorBrewer, scales (>= 1.0.0), sp, stats,\nviridisLite, xfun",
+        "Suggests": "knitr, maps, purrr, R6, RJSONIO, rmarkdown, s2, sf (>=\n0.9-6), shiny, terra, testthat (>= 3.0.0)",
+        "Config/testthat/edition": "3",
+        "Config/Needs/website": "dplyr, geojsonio, ncdf4, tidyverse/tidytemplate",
+        "Encoding": "UTF-8",
+        "LazyData": "true",
+        "RoxygenNote": "7.3.1",
+        "NeedsCompilation": "no",
+        "Packaged": "2024-03-25 22:40:52 UTC; cpsievert",
+        "Author": "Joe Cheng [aut, cre],\n  Barret Schloerke [aut] (<https://orcid.org/0000-0001-9986-114X>),\n  Bhaskar Karambelkar [aut],\n  Yihui Xie [aut],\n  Hadley Wickham [ctb],\n  Kenton Russell [ctb],\n  Kent Johnson [ctb],\n  Vladimir Agafonkin [ctb, cph] (Leaflet library),\n  CloudMade [cph] (Leaflet library),\n  Leaflet contributors [ctb] (Leaflet library),\n  Brandon Copeland [ctb, cph] (leaflet-measure plugin),\n  Joerg Dietrich [ctb, cph] (Leaflet.Terminator plugin),\n  Benjamin Becquet [ctb, cph] (Leaflet.MagnifyingGlass plugin),\n  Norkart AS [ctb, cph] (Leaflet.MiniMap plugin),\n  L. Voogdt [ctb, cph] (Leaflet.awesome-markers plugin),\n  Daniel Montague [ctb, cph] (Leaflet.EasyButton plugin),\n  Kartena AB [ctb, cph] (Proj4Leaflet plugin),\n  Robert Kajic [ctb, cph] (leaflet-locationfilter plugin),\n  Mapbox [ctb, cph] (leaflet-omnivore plugin),\n  Michael Bostock [ctb, cph] (topojson),\n  Posit Software, PBC [cph, fnd]",
+        "Maintainer": "Joe Cheng <joe@posit.co>",
+        "Repository": "CRAN",
+        "Date/Publication": "2024-03-26 19:10:06 UTC",
+        "Built": "R 4.4.3; ; 2025-05-24 03:45:53 UTC; windows"
+      }
+    },
+    "leaflet.providers": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Type": "Package",
+        "Package": "leaflet.providers",
+        "Title": "Leaflet Providers",
+        "Version": "2.0.0",
+        "Authors@R": "c(\n    person(\"Leslie\", \"Huang\", , \"lesliehuang@nyu.edu\", role = \"aut\"),\n    person(\"Barret\", \"Schloerke\", , \"barret@posit.co\", role = c(\"ctb\", \"cre\"),\n           comment = c(ORCID = \"0000-0001-9986-114X\")),\n    person(\"Leaflet Providers contributors\", role = c(\"ctb\", \"cph\"),\n           comment = \"Leaflet Providers plugin\"),\n    person(\"Posit Software, PBC\", role = c(\"cph\", \"fnd\"))\n  )",
+        "Description": "Contains third-party map tile provider information from\n    'Leaflet.js', <https://github.com/leaflet-extras/leaflet-providers>,\n    to be used with the 'leaflet' R package. Additionally,\n    'leaflet.providers' enables users to retrieve up-to-date provider\n    information between package updates.",
+        "License": "BSD_2_clause + file LICENSE",
+        "URL": "https://rstudio.github.io/leaflet.providers/,\nhttps://github.com/rstudio/leaflet.providers",
+        "BugReports": "https://github.com/rstudio/leaflet.providers/issues",
+        "Depends": "R (>= 2.10)",
+        "Imports": "htmltools",
+        "Suggests": "jsonlite, testthat (>= 3.0.0), V8",
+        "Config/Needs/website": "tidyverse/tidytemplate",
+        "Config/testthat/edition": "3",
+        "Encoding": "UTF-8",
+        "Language": "en-US",
+        "RoxygenNote": "7.2.3",
+        "Collate": "'providers_data.R' 'get_current_providers.R'\n'leaflet.providers-package.R' 'zzz.R'",
+        "NeedsCompilation": "no",
+        "Packaged": "2023-10-17 12:24:21 UTC; garrick",
+        "Author": "Leslie Huang [aut],\n  Barret Schloerke [ctb, cre] (<https://orcid.org/0000-0001-9986-114X>),\n  Leaflet Providers contributors [ctb, cph] (Leaflet Providers plugin),\n  Posit Software, PBC [cph, fnd]",
+        "Maintainer": "Barret Schloerke <barret@posit.co>",
+        "Repository": "CRAN",
+        "Date/Publication": "2023-10-17 17:10:02 UTC",
+        "Built": "R 4.4.3; ; 2025-05-24 02:45:04 UTC; windows"
       }
     },
     "lifecycle": {
@@ -1918,6 +2086,28 @@
         "Built": "R 4.4.3; ; 2025-04-07 00:32:10 UTC; windows"
       }
     },
+    "png": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "png",
+        "Version": "0.1-8",
+        "Title": "Read and write PNG images",
+        "Author": "Simon Urbanek <Simon.Urbanek@r-project.org>",
+        "Maintainer": "Simon Urbanek <Simon.Urbanek@r-project.org>",
+        "Depends": "R (>= 2.9.0)",
+        "Description": "This package provides an easy and simple way to read, write and display bitmap images stored in the PNG format. It can read and write both files and in-memory raw vectors.",
+        "License": "GPL-2 | GPL-3",
+        "SystemRequirements": "libpng",
+        "URL": "http://www.rforge.net/png/",
+        "NeedsCompilation": "yes",
+        "Packaged": "2022-11-29 09:42:31 UTC; rforge",
+        "Repository": "CRAN",
+        "Date/Publication": "2022-11-29 11:12:53 UTC",
+        "Built": "R 4.4.0; x86_64-w64-mingw32; 2024-04-23 00:24:52 UTC; windows",
+        "Archs": "x64"
+      }
+    },
     "prettyunits": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -2122,6 +2312,34 @@
         "Repository": "CRAN",
         "Date/Publication": "2021-01-31 05:40:02 UTC",
         "Built": "R 4.4.3; x86_64-w64-mingw32; 2025-04-07 00:32:10 UTC; windows",
+        "Archs": "x64"
+      }
+    },
+    "raster": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "raster",
+        "Type": "Package",
+        "Title": "Geographic Data Analysis and Modeling",
+        "Version": "3.6-32",
+        "Date": "2025-03-27",
+        "Imports": "Rcpp, methods, terra (>= 1.8-5)",
+        "LinkingTo": "Rcpp",
+        "Depends": "sp (>= 1.4-5), R (>= 3.5.0)",
+        "Suggests": "ncdf4, igraph, tcltk, parallel, rasterVis, MASS, sf,\ntinytest, gstat, fields, exactextractr",
+        "Description": "Reading, writing, manipulating, analyzing and modeling of spatial data. This package has been superseded by the \"terra\" package <https://CRAN.R-project.org/package=terra>. ",
+        "License": "GPL (>= 3)",
+        "URL": "https://rspatial.org/raster",
+        "BugReports": "https://github.com/rspatial/raster/issues/",
+        "Authors@R": "c(\n\tperson(\"Robert J.\", \"Hijmans\", role = c(\"cre\", \"aut\"),  \n\t\t\temail = \"r.hijmans@gmail.com\", \n\t\t\tcomment = c(ORCID = \"0000-0001-5872-2872\")),\n\tperson(\"Jacob\", \"van Etten\", role = \"ctb\"),\n\tperson(\"Michael\", \"Sumner\", role = \"ctb\"),\n\tperson(\"Joe\", \"Cheng\", role = \"ctb\"),\n\tperson(\"Dan\", \"Baston\", role = \"ctb\"),\n\tperson(\"Andrew\", \"Bevan\", role = \"ctb\"),\n\tperson(\"Roger\", \"Bivand\", role = \"ctb\"),\n\tperson(\"Lorenzo\", \"Busetto\", role = \"ctb\"),\n\tperson(\"Mort\", \"Canty\", role = \"ctb\"),\n\tperson(\"Ben\", \"Fasoli\", role = \"ctb\"),\n\tperson(\"David\", \"Forrest\", role = \"ctb\"),\n\tperson(\"Aniruddha\", \"Ghosh\", role = \"ctb\"),\n\tperson(\"Duncan\", \"Golicher\", role = \"ctb\"),\n\tperson(\"Josh\", \"Gray\", role = \"ctb\"),\n\tperson(\"Jonathan A.\", \"Greenberg\", role = \"ctb\"),\n\tperson(\"Paul\", \"Hiemstra\", role = \"ctb\"),\n\tperson(\"Kassel\", \"Hingee\", role = \"ctb\"),\n\tperson(\"Alex\", \"Ilich\", role = \"ctb\"),\n\tperson(\"Institute for Mathematics Applied Geosciences\", role=\"cph\"),\n\tperson(\"Charles\", \"Karney\", role = \"ctb\"),\n\tperson(\"Matteo\", \"Mattiuzzi\", role = \"ctb\"),\n\tperson(\"Steven\", \"Mosher\", role = \"ctb\"),\n\tperson(\"Babak\", \"Naimi\", role = \"ctb\"),\t\n\tperson(\"Jakub\", \"Nowosad\", role = \"ctb\"),\n\tperson(\"Edzer\", \"Pebesma\", role = \"ctb\"),\n\tperson(\"Oscar\", \"Perpinan Lamigueiro\", role = \"ctb\"),\n\tperson(\"Etienne B.\", \"Racine\", role = \"ctb\"),\n\tperson(\"Barry\", \"Rowlingson\", role = \"ctb\"),\n\tperson(\"Ashton\", \"Shortridge\", role = \"ctb\"),\n\tperson(\"Bill\", \"Venables\", role = \"ctb\"),\n\tperson(\"Rafael\", \"Wueest\", role = \"ctb\")\n\t)",
+        "NeedsCompilation": "yes",
+        "Packaged": "2025-03-28 04:28:45 UTC; rhijm",
+        "Author": "Robert J. Hijmans [cre, aut] (<https://orcid.org/0000-0001-5872-2872>),\n  Jacob van Etten [ctb],\n  Michael Sumner [ctb],\n  Joe Cheng [ctb],\n  Dan Baston [ctb],\n  Andrew Bevan [ctb],\n  Roger Bivand [ctb],\n  Lorenzo Busetto [ctb],\n  Mort Canty [ctb],\n  Ben Fasoli [ctb],\n  David Forrest [ctb],\n  Aniruddha Ghosh [ctb],\n  Duncan Golicher [ctb],\n  Josh Gray [ctb],\n  Jonathan A. Greenberg [ctb],\n  Paul Hiemstra [ctb],\n  Kassel Hingee [ctb],\n  Alex Ilich [ctb],\n  Institute for Mathematics Applied Geosciences [cph],\n  Charles Karney [ctb],\n  Matteo Mattiuzzi [ctb],\n  Steven Mosher [ctb],\n  Babak Naimi [ctb],\n  Jakub Nowosad [ctb],\n  Edzer Pebesma [ctb],\n  Oscar Perpinan Lamigueiro [ctb],\n  Etienne B. Racine [ctb],\n  Barry Rowlingson [ctb],\n  Ashton Shortridge [ctb],\n  Bill Venables [ctb],\n  Rafael Wueest [ctb]",
+        "Maintainer": "Robert J. Hijmans <r.hijmans@gmail.com>",
+        "Repository": "CRAN",
+        "Date/Publication": "2025-03-28 08:10:02 UTC",
+        "Built": "R 4.4.3; x86_64-w64-mingw32; 2025-05-24 02:57:08 UTC; windows",
         "Archs": "x64"
       }
     },
@@ -2505,6 +2723,33 @@
         "Built": "R 4.4.3; ; 2025-05-04 02:14:12 UTC; windows"
       }
     },
+    "sp": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "sp",
+        "Version": "2.2-0",
+        "Title": "Classes and Methods for Spatial Data",
+        "Authors@R": "c(person(\"Edzer\", \"Pebesma\", role = c(\"aut\", \"cre\"),\n\t\t\t\temail = \"edzer.pebesma@uni-muenster.de\"),\n\t\t\tperson(\"Roger\", \"Bivand\", role = \"aut\",\n            \temail = \"Roger.Bivand@nhh.no\"),\n\t\t\tperson(\"Barry\", \"Rowlingson\", role = \"ctb\"),\n\t\t\tperson(\"Virgilio\", \"Gomez-Rubio\", role = \"ctb\"),\n\t\t\tperson(\"Robert\", \"Hijmans\", role = \"ctb\"),\n\t\t\tperson(\"Michael\", \"Sumner\", role = \"ctb\"),\n\t\t\tperson(\"Don\", \"MacQueen\", role = \"ctb\"),\n\t\t\tperson(\"Jim\", \"Lemon\", role = \"ctb\"),\n                        person(\"Finn\", \"Lindgren\", role = \"ctb\"),\n\t\t\tperson(\"Josh\", \"O'Brien\", role = \"ctb\"),\n\t\t\tperson(\"Joseph\", \"O'Rourke\", role = \"ctb\"),\n                        person(\"Patrick\", \"Hausmann\", role = \"ctb\"))",
+        "Depends": "R (>= 3.5.0), methods",
+        "Imports": "utils, stats, graphics, grDevices, lattice, grid",
+        "Suggests": "RColorBrewer, gstat, deldir, knitr, maps, mapview, rmarkdown,\nsf, terra, raster",
+        "Description": "Classes and methods for spatial\n  data; the classes document where the spatial location information\n  resides, for 2D or 3D data. Utility functions are provided, e.g. for\n  plotting data as maps, spatial selection, as well as methods for\n  retrieving coordinates, for subsetting, print, summary, etc. From this\n  version, 'rgdal', 'maptools', and 'rgeos' are no longer used at all,\n  see <https://r-spatial.org/r/2023/05/15/evolution4.html> for details.",
+        "License": "GPL (>= 2)",
+        "URL": "https://github.com/edzer/sp/ https://edzer.github.io/sp/",
+        "BugReports": "https://github.com/edzer/sp/issues",
+        "Collate": "bpy.colors.R AAA.R Class-CRS.R CRS-methods.R Class-Spatial.R\nSpatial-methods.R projected.R Class-SpatialPoints.R\nSpatialPoints-methods.R Class-SpatialPointsDataFrame.R\nSpatialPointsDataFrame-methods.R Class-SpatialMultiPoints.R\nSpatialMultiPoints-methods.R\nClass-SpatialMultiPointsDataFrame.R\nSpatialMultiPointsDataFrame-methods.R Class-GridTopology.R\nClass-SpatialGrid.R Class-SpatialGridDataFrame.R\nClass-SpatialLines.R SpatialLines-methods.R\nClass-SpatialLinesDataFrame.R SpatialLinesDataFrame-methods.R\nClass-SpatialPolygons.R Class-SpatialPolygonsDataFrame.R\nSpatialPolygons-methods.R SpatialPolygonsDataFrame-methods.R\nGridTopology-methods.R SpatialGrid-methods.R\nSpatialGridDataFrame-methods.R SpatialPolygons-internals.R\npoint.in.polygon.R SpatialPolygons-displayMethods.R zerodist.R\nimage.R stack.R bubble.R mapasp.R select.spatial.R gridded.R\nasciigrid.R spplot.R over.R spsample.R recenter.R dms.R\ngridlines.R spdists.R rbind.R flipSGDF.R chfids.R loadmeuse.R\ncompassRose.R surfaceArea.R spOptions.R subset.R disaggregate.R\nsp_spat1.R merge.R aggregate.R elide.R sp2Mondrian.R",
+        "VignetteBuilder": "knitr",
+        "NeedsCompilation": "yes",
+        "Packaged": "2025-01-30 11:06:55 UTC; edzer",
+        "Author": "Edzer Pebesma [aut, cre],\n  Roger Bivand [aut],\n  Barry Rowlingson [ctb],\n  Virgilio Gomez-Rubio [ctb],\n  Robert Hijmans [ctb],\n  Michael Sumner [ctb],\n  Don MacQueen [ctb],\n  Jim Lemon [ctb],\n  Finn Lindgren [ctb],\n  Josh O'Brien [ctb],\n  Joseph O'Rourke [ctb],\n  Patrick Hausmann [ctb]",
+        "Maintainer": "Edzer Pebesma <edzer.pebesma@uni-muenster.de>",
+        "Repository": "CRAN",
+        "Date/Publication": "2025-02-01 09:40:02 UTC",
+        "Built": "R 4.4.3; x86_64-w64-mingw32; 2025-04-07 01:14:18 UTC; windows",
+        "Archs": "x64"
+      }
+    },
     "stringi": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -2658,6 +2903,38 @@
         "Repository": "CRAN",
         "Date/Publication": "2025-04-30 17:50:02 UTC",
         "Built": "R 4.4.3; x86_64-w64-mingw32; 2025-05-24 02:56:58 UTC; windows",
+        "Archs": "x64"
+      }
+    },
+    "terra": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "terra",
+        "Type": "Package",
+        "Title": "Spatial Data Analysis",
+        "Version": "1.8-42",
+        "Date": "2025-04-02",
+        "Depends": "R (>= 3.5.0)",
+        "Suggests": "parallel, tinytest, ncdf4, sf (>= 0.9-8), deldir, XML,\nleaflet (>= 2.2.1), htmlwidgets",
+        "LinkingTo": "Rcpp",
+        "Imports": "methods, Rcpp (>= 1.0-10)",
+        "SystemRequirements": "C++17, GDAL (>= 2.2.3), GEOS (>= 3.4.0), PROJ (>=\n4.9.3), TBB, sqlite3",
+        "Encoding": "UTF-8",
+        "Language": "en-US",
+        "Maintainer": "Robert J. Hijmans <r.hijmans@gmail.com>",
+        "Description": "Methods for spatial data analysis with vector (points, lines, polygons) and raster (grid) data. Methods for vector data include geometric operations such as intersect and buffer. Raster methods include local, focal, global, zonal and geometric operations. The predict and interpolate methods facilitate the use of regression type (interpolation, machine learning) models for spatial prediction, including with satellite remote sensing data. Processing of very large files is supported. See the manual and tutorials on <https://rspatial.org/> to get started. 'terra' replaces the 'raster' package ('terra' can do more, and it is faster and easier to use).",
+        "License": "GPL (>= 3)",
+        "URL": "https://rspatial.org/, https://rspatial.github.io/terra/",
+        "BugReports": "https://github.com/rspatial/terra/issues/",
+        "LazyLoad": "yes",
+        "Authors@R": "c(\n\tperson(\"Robert J.\", \"Hijmans\", role=c(\"cre\", \"aut\"),  \n\t\t\temail=\"r.hijmans@gmail.com\", comment=c(ORCID=\"0000-0001-5872-2872\")),\t\t\t\n    person(\"Márcia\", \"Barbosa\", role=\"ctb\"),\n    person(\"Roger\", \"Bivand\", role=\"ctb\", comment=c(ORCID=\"0000-0003-2392-6140\")),\n    person(\"Andrew\", \"Brown\", role=\"ctb\"),\n    person(\"Michael\", \"Chirico\", role=\"ctb\"),\n    person(\"Emanuele\", \"Cordano\", role=\"ctb\",comment=c(ORCID=\"0000-0002-3508-5898\")),\n    person(\"Krzysztof\", \"Dyba\", role=\"ctb\", comment=c(ORCID=\"0000-0002-8614-3816\")),\n    person(\"Edzer\", \"Pebesma\", role=\"ctb\", comment=c(ORCID=\"0000-0001-8049-7069\")),\n    person(\"Barry\", \"Rowlingson\", role=\"ctb\"),\n    person(\"Michael D.\", \"Sumner\", role=\"ctb\"))",
+        "NeedsCompilation": "yes",
+        "Packaged": "2025-04-02 03:14:04 UTC; rhijm",
+        "Author": "Robert J. Hijmans [cre, aut] (<https://orcid.org/0000-0001-5872-2872>),\n  Márcia Barbosa [ctb],\n  Roger Bivand [ctb] (<https://orcid.org/0000-0003-2392-6140>),\n  Andrew Brown [ctb],\n  Michael Chirico [ctb],\n  Emanuele Cordano [ctb] (<https://orcid.org/0000-0002-3508-5898>),\n  Krzysztof Dyba [ctb] (<https://orcid.org/0000-0002-8614-3816>),\n  Edzer Pebesma [ctb] (<https://orcid.org/0000-0001-8049-7069>),\n  Barry Rowlingson [ctb],\n  Michael D. Sumner [ctb]",
+        "Repository": "CRAN",
+        "Date/Publication": "2025-04-02 09:40:02 UTC",
+        "Built": "R 4.4.3; x86_64-w64-mingw32; 2025-04-07 01:14:20 UTC; windows",
         "Archs": "x64"
       }
     },
@@ -3163,11 +3440,14 @@
     }
   },
   "files": {
+    "cohogeneticcollections2023.csv": {
+      "checksum": "500c2211a4083e180c5980ab35044481"
+    },
     "quartodoc.html": {
-      "checksum": "462b51cdc8faa742c34b8135bc4cec6a"
+      "checksum": "89aa6c33181ee6c985043be864a5e100"
     },
     "quartodoc.qmd": {
-      "checksum": "2273b89e8844bc84d30ea572cbfa39d8"
+      "checksum": "9cffe978d9e5dff922caa81892959d76"
     },
     "quartodoc_files/figure-html/cumulativeyear-1.png": {
       "checksum": "d70817d3ea4fd79e51676167cab56a8c"
@@ -3199,11 +3479,65 @@
     "quartodoc_files/libs/clipboard/clipboard.min.js": {
       "checksum": "15f52a1ee547f2bdd46e56747332ca2d"
     },
+    "quartodoc_files/libs/htmltools-fill-0.5.8.1/fill.css": {
+      "checksum": "0c307b2ce7a3fa7f260a0451457c809f"
+    },
+    "quartodoc_files/libs/htmlwidgets-1.6.4/htmlwidgets.js": {
+      "checksum": "237f59bc086ccf24f39be55311023b91"
+    },
+    "quartodoc_files/libs/jquery-3.6.0/jquery-3.6.0.js": {
+      "checksum": "2849239b95f5a9a2aea3f6ed9420bb88"
+    },
+    "quartodoc_files/libs/jquery-3.6.0/jquery-3.6.0.min.js": {
+      "checksum": "8fb8fee4fcc3cc86ff6c724154c49c42"
+    },
+    "quartodoc_files/libs/jquery-3.6.0/jquery-3.6.0.min.map": {
+      "checksum": "6efc5d663aaacac2024153fa0d4bafcd"
+    },
     "quartodoc_files/libs/kePrint-0.0.1/kePrint.js": {
       "checksum": "03b791fcaee0a40c261c3c14f3d85d27"
     },
+    "quartodoc_files/libs/leaflet-1.3.1/images/layers-2x.png": {
+      "checksum": "4f0283c6ce28e888000e978e537a6a56"
+    },
+    "quartodoc_files/libs/leaflet-1.3.1/images/layers.png": {
+      "checksum": "a6137456ed160d7606981aa57c559898"
+    },
+    "quartodoc_files/libs/leaflet-1.3.1/images/marker-icon-2x.png": {
+      "checksum": "401d815dc206b8dc1b17cd0e37695975"
+    },
+    "quartodoc_files/libs/leaflet-1.3.1/images/marker-icon.png": {
+      "checksum": "2273e3d8ad9264b7daa5bdbf8e6b47f8"
+    },
+    "quartodoc_files/libs/leaflet-1.3.1/images/marker-shadow.png": {
+      "checksum": "44a526eed258222515aa21eaffd14a96"
+    },
+    "quartodoc_files/libs/leaflet-1.3.1/leaflet.css": {
+      "checksum": "58da535d4980b4c71b74a41bbee8a510"
+    },
+    "quartodoc_files/libs/leaflet-1.3.1/leaflet.js": {
+      "checksum": "af438f3b0ec09c81bc8fb9959de88155"
+    },
+    "quartodoc_files/libs/leaflet-binding-2.2.2/leaflet.js": {
+      "checksum": "7b0d68b050b79c5699a9f361b697b6ef"
+    },
+    "quartodoc_files/libs/leaflet-providers-2.0.0/leaflet-providers_2.0.0.js": {
+      "checksum": "b65600ab8d380d9a3100e9d1c92cb4bb"
+    },
+    "quartodoc_files/libs/leaflet-providers-plugin-2.2.2/leaflet-providers-plugin.js": {
+      "checksum": "8fb426b3cfaa7d730f3b56a104012882"
+    },
+    "quartodoc_files/libs/leafletfix-1.0.0/leafletfix.css": {
+      "checksum": "6a38c873de948d8a1458ec0429aa0063"
+    },
     "quartodoc_files/libs/lightable-0.0.1/lightable.css": {
       "checksum": "25547ce4d44910ea8f377212d34397fa"
+    },
+    "quartodoc_files/libs/proj4-2.6.2/proj4.min.js": {
+      "checksum": "4c6ef5a940694e1acc5c9ef66572fa79"
+    },
+    "quartodoc_files/libs/Proj4Leaflet-1.0.1/proj4leaflet.js": {
+      "checksum": "4c72a5a790e066510f9eb68541280646"
     },
     "quartodoc_files/libs/quarto-html/anchor.min.js": {
       "checksum": "91bcf6cd1fd88fec3f109811e5fc3546"
@@ -3228,6 +3562,12 @@
     },
     "quartodoc_files/libs/quarto-ojs/quarto-ojs.css": {
       "checksum": "8645f556f692a33c4645eeb25d3d4122"
+    },
+    "quartodoc_files/libs/rstudio_leaflet-1.3.1/images/1px.png": {
+      "checksum": "978c1bee49d7ad5fc1a4d81099b13e18"
+    },
+    "quartodoc_files/libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css": {
+      "checksum": "49b23a276edf8677e7bb779525d2be7d"
     },
     "README.md": {
       "checksum": "ff38e83d6bad1b4c51c7ff5af5f943cd"

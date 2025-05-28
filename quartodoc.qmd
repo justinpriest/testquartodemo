@@ -6,7 +6,7 @@ format:
   html:
     toc: true
     toc-location: left
-    toc-expand: 3
+    toc-expand: 2
 editor: visual
 execute:
   echo: false
@@ -31,6 +31,7 @@ library(lubridate)
 library(janitor)
 library(knitr)
 library(kableExtra)
+library(leaflet)
 #library(here)
 #rsconnect::writeManifest() #run once/every time you update libraries
 
@@ -42,6 +43,13 @@ situkweir <- read_csv("situkweirdata.csv") %>%
 situksummary <- situkweir %>%
   group_by(year) %>%
   summarise(totalcount = sum(count, na.rm = TRUE))
+
+############
+# Now import the map data
+cohosamplesites <- read_csv("cohogeneticcollections2023.csv") %>%
+  clean_names() %>%
+  select(year:sample_count) %>%
+  filter(river != "Salmon River")
 
 ```
 
@@ -63,9 +71,7 @@ counts2020 <- (situksummary %>% filter(year == 2020))$totalcount
 
 ## Copy Speech... Original Response
 
-We can add summary text here and even dynamically summarize the data with small snippets of summary text written by code. For example, in 2020, at the Situk River weir, there were `{r} prettyNum(counts2020, big.mark = ",")` sockeye salmon.
-
-### A traveller from an antique land
+We can add summary text here and even dynamically summarize the data with small snippets of summary text written by code. For example, in 2020, at the Situk River weir, there were `{r} prettyNum(counts2020, big.mark = ",")` sockeye salmon.  
 
 As you can see, the headings are also easily created, allowing for simple navigation.
 
@@ -126,8 +132,6 @@ years = [...new Set(data.map(d => d.year))].sort()
 // Assign a fixed color palette (adjust if more than 10 years)
 colors = d3.schemeTableau10.slice(0, years.length)
 
-
-
 // Interactive checkbox to choose babies
 viewof selectedyears = Inputs.checkbox(
   [...new Set(data.map(d => d.year))],
@@ -136,7 +140,6 @@ viewof selectedyears = Inputs.checkbox(
 
 // Filter the dataset to selected years
 filtered = data.filter(d => selectedyears.includes(d.year))
-
 
 
 // plot with lines + hover dots
@@ -168,7 +171,7 @@ Plot.plot({
 ```
 
 # Tables
-## Of Night and Light and the Half Light  
+## Of Light and the Half Light  
 I know what you're thinking, "yadda yadda yadda, figures, pshhh, who needs em. 
 Show me some tables!" One of the great parts about tables in HTML is the ability 
 to add formatting, search the table yourself, or just highlight rows. 
@@ -195,3 +198,28 @@ summarytable %>%
   column_spec(4, color = "white",
               background = spec_color(summarytable$season_total, end = 0.9))
 ```
+
+
+# Map
+## A traveller from an antique land
+```{r leafletmap}
+leaflet(data = cohosamplesites) %>%
+  addProviderTiles(providers$Esri.WorldTopoMap) %>%  # change basemap here
+  addCircleMarkers(
+    ~long, ~lat,
+    radius = 5,
+    stroke = FALSE,
+    fillOpacity = 0.8,
+    color = "steelblue",
+    popup = ~paste0(
+      "<strong>River:</strong> ", river, "<br>",
+      "<strong>AWC:</strong> ", awc, "<br>",
+      "<strong>Count:</strong> ", sample_count))
+```
+
+Creating maps from lat/long data is trivial. Since this is an html document, 
+the maps are even interactive. Go ahead and click the points above!  
+
+
+# Wrapup
+## Twice as many stars as usual
