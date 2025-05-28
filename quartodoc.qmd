@@ -1,22 +1,29 @@
 ---
-title: "Untitled"
+title: "Quarto Demonstration"
 author: "Justin Priest"
 date: "May 27, 2025"
-format: html
+format:
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
 editor: visual
 execute:
   echo: false
   warning: false
 ---
 
-## Quarto
+# Quarto Overview
 
-fgdgfdhgdhgfd
-adssfsf
+## This is just to say...
 
-## Running Code
+This is an example Quarto file. This entire document was written in code to demonstrate the utility of such documents. We can use such files to quickly summarize data (especially inseason), and disseminate results. Relying on code, rather than manually creating the file, means that results are dynamic. We can update figures and the file by simply updating the underlying data.
 
-You can embed code like this:
+# Figures
+
+## Generation of Figures
+
+Perhaps the best use case is the automatic generation of figures. This file is created to be an HTML file which means everything can be hyperlinked easily.
 
 ```{r importbg}
 library(tidyverse)
@@ -36,18 +43,27 @@ situksummary <- situkweir %>%
 
 ```
 
-You can add options to executable code like this
-
 ```{r totalyearchart}
 #| echo: false
+#| label: fig-totyear
+#| fig-cap: "Totals by year figure made with ggplot."
 
 ggplot(situksummary, aes(x = year, y = totalcount)) +
   geom_col()
 
+counts2020 <- (situksummary %>% filter(year == 2020))$totalcount
+
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed).
-```{r cumulativeyear}
+## Copy Speech... Original Response
+
+We can add summary text here and even dynamically summarize the data with small snippets of summary text written by code. For example, in 2020, at the Situk River weir, there were `{r} prettyNum(counts2020, big.mark = ",")` sockeye salmon.
+
+### A traveller from an antique land...
+
+As you can see, the headings are also easily created, allowing for simple navigation.
+
+```{r dataparsing}
 situkcummcounts <- situkweir %>%
   filter(year >= 2015) %>%
   arrange(year, obs_day_mm_dd) %>%  # Ensure data is sorted by year and day
@@ -58,15 +74,28 @@ situkcummcounts <- situkweir %>%
 
 jsonlite::toJSON(situkcummcounts, dataframe = "rows", pretty = TRUE, auto_unbox = TRUE) |>
   htmltools::tags$script(type = "application/json", id = "json_data")
+```
+
+```{r cumulativeyear}
+#| label: fig-cumulativeggplot
+#| fig-cap: "A static figure made with ggplot."
 
 situkcummcounts %>%
   ggplot(aes(x = obs_day_mm_dd, y = cumulative_count, color = year)) +
   geom_line()
 ```
 
+We can quickly add more text too.
+
+Also, since this is a hosted HTML file, we can make things 
+*I N T E R A C T I V E.* The plot below is similar to the above but it now has 
+some checkboxes to filter the data and also can show numbers when hovered over. 
+Notably, this was written in a completely different language than R! 
 
 ```{ojs ojsyears}
 //| echo: false
+//| label: fig-dynam
+//| fig-cap: "A dynamic figure made with OJS"
 
 import { Plot } from "@observablehq/plot"
 
@@ -100,7 +129,7 @@ filtered = data.filter(d => selectedyears.includes(d.year))
 
 
 
-// ✅ Plot with lines + hover dots
+// plot with lines + hover dots
 Plot.plot({
   x: { label: "Date" },
   y: { label: "Cumulative Count" },
@@ -121,10 +150,9 @@ Plot.plot({
       y: "count",
       fill: "year",
       title: d => `${d.year}: ${d.count}`,
-      tip: true  // ✅ tooltip only on hover
+      tip: true  // tooltip only on hover
     })
   ]
 })
 
 ```
-
